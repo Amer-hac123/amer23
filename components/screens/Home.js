@@ -1,5 +1,6 @@
 //import liraries
-import React, {Component} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, {useEffect,useState} from 'react';
 import {
   View,
   Text,
@@ -12,55 +13,55 @@ import {
 } from 'react-native';
 import {COLOURS} from '../database/Database';
 import {Item} from '../database/Database';
-const categoryArray = [
-  {id: 0, name: 'table'},
-  {id: 1, name: 'table'},
-  {id: 2, name: 'table'},
-  {id: 3, name: 'table'},
-];
-const se = categoryArray.map(item => {
-  return (
-    <Text style={{fontSize: 60, margin: 40, marginBottom: 20, marginTop: 30}}>
-      {item.name}
-    </Text>
-  );
-});
+
 
 const tab = () => {};
 // create a component
 const scroll = Item.map(item => {
   return (
     <TouchableOpacity style={{}}>
-      <Image
-        style={{width: 200, height: 200, borderRadius: 13, marginBottom: 90}}
-        source={item.productname}
-      />
-      <Text source={item.productname} style={{fontSize: 102}}></Text>
+      <View>
+        <Image
+          style={{width: 200, height: 180, borderRadius: 13, left:20, marginBottom: 90}}
+          source={item.productImage}
+        />
+        <Text source={item.productname} style={{fontSize: 102}}></Text>
+      </View>
     </TouchableOpacity>
   );
 });
+
 const Home = () => {
+  const navigation=useNavigation();
   return (
     <SafeAreaView style={styles.page}>
       <StatusBar backgroundColor={COLOURS.gray} barStyle="dark-content" />
+     <TouchableOpacity style={styles.seall} onPress={()=>navigation.navigate('productinfo')}>
+        <Text style={styles.seall}> see all</Text>
+      </TouchableOpacity>
 
       <View style={styles.v1}>
         <TouchableOpacity>
           <Image
-            source={require('../database/images/products/icon.png')}
+            source={require('../database/images/products/user.png')}
             style={styles.img}
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity  onPress={()=>navigation.navigate('mycart')}>
           <Image
             source={require('../database/images/products/shopping-cart.png')}
-            style={styles.img}
+            style={styles.img1}
           />
         </TouchableOpacity>
+        
       </View>
+
       <Text style={styles.text}>welcome </Text>
-      <Text style={styles.untext}>to baba store </Text>
-      <ScrollView showsVerticalScrollIndicator={false}>{scroll}</ScrollView>
+      <View style={styles.dd}>
+        <Text style={styles.untext}>to baba store </Text>
+      </View>
+      
+      <ScrollView horizontal showsVerticalScrollIndicator={false}>{scroll}</ScrollView>
     </SafeAreaView>
   );
 };
@@ -75,7 +76,13 @@ const styles = StyleSheet.create({
   },
   img: {
     height: 48,
-    width: 35,
+    width: 48,
+    right: 10,
+  },
+  img1: {
+    height: 48,
+    width: 48,
+    
   },
   v1: {
     width: '100%',
@@ -86,20 +93,28 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 50,
     fontWeight: '900',
-    margin: 10,
+    right: -10,
   },
   untext: {
-    borderRadius: 13,
-    backgroundColor: 'black',
     color: 'white',
-    borderRadius: 70,
-    fontSize: 55,
-    fontWeight: '300',
-    margin: 20,
-    justifyContent: 'center',
-    top: -20,
-    height: '10%',
+    fontSize: 45,
+    left: 20,
+  },
+  seall: {
+    color: 'blue',
+    fontSize: 25,
+    top: 135,
+    left:'40%'
+  },
+  dd: {
+    color: 'white',
+    borderRadius: 22,
+    top: -29,
+    margin: 40,
+    right: 30,
     width: '80%',
+    height: '10%',
+    backgroundColor: 'black',
   },
 });
 

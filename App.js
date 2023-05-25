@@ -6,6 +6,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './components/screens/Home';
 import mycart from './components/screens/Mycart';
 import productinfo from './components/screens/prductifo';
+import MyComponent from './components/screens/profile';
+import profile from './components/screens/profile';
 // create a component
 const APP = () => {
   const stack = createNativeStackNavigator();
@@ -16,6 +18,8 @@ const APP = () => {
         <stack.Screen name="Home" component={Home} />
         <stack.Screen name="mycart" component={mycart} />
         <stack.Screen name="productinfo" component={productinfo} />
+        <stack.Screen name="profile" component={profile} />
+
       </stack.Navigator>
     </NavigationContainer>
   );
