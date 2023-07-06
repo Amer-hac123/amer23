@@ -1,19 +1,16 @@
-export const COLOURS = {
-  white: '#ffff',
-  black: '#000000',
-  green: '#00AC76',
-  red: '#C04345',
-  blue: '#0043F9',
-  backgroundLight: '#F0F0F3',
-  backgroundMedium: '#B9B9B9',
-  backgroundDark: '#777777',
-
+export const COLORS = {
+  white: '#FFF',
+  dark: '#000',
+  primary: '#F9813A',
+  secondary: '#fedac5',
+  light: '#E5E5E5',
+  grey: '#908e8c',
 };
 export const Item = [
   {
     id: 1,
     category: 'product',
-    productname: 'maly',
+    productname: ['maly',],
     productprice: '1000$',
     descreption: 'trekashketa,matrial sndvesh',
     isoff: true,
@@ -30,7 +27,7 @@ export const Item = [
   {
     id: 2,
     category: 'product',
-    productname: 'hatab',
+    productname: ['hatab','maly'],
     productprice: '1300$',
     descreption: 'trekashketa,matrial sndvesh',
     isoff: false,
@@ -46,7 +43,7 @@ export const Item = [
   {
     id: 3,
     category: 'product',
-    productname: 'klass',
+    productname: ['klass','hatab','maly'],
     productprice: '1900$',
     descreption: 'trekashketa,matrial sndvesh',
     isoff: false,
@@ -62,7 +59,7 @@ export const Item = [
   {
     id: 4,
     category: 'product',
-    productname: 'modern',
+    productname: ['modern','klass','hatab','maly'],
     productprice: '2500$',
     descreption: 'trekashketa,matrial sndvesh',
     isoff: false,
@@ -79,7 +76,7 @@ export const Item = [
     id: 5,
 
     category: 'product',
-    productname: 'fire',
+    productname:['modern','klass','hatab','maly'],
     productprice: '3000$',
     descreption: 'trekashketa,matrial sndvesh',
     isoff: false,

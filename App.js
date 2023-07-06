@@ -8,6 +8,7 @@ import mycart from './components/screens/Mycart';
 import productinfo from './components/screens/prductifo';
 import MyComponent from './components/screens/profile';
 import profile from './components/screens/profile';
+import cards from './components/screens/cards';
 // create a component
 const APP = () => {
   const stack = createNativeStackNavigator();
@@ -19,7 +20,7 @@ const APP = () => {
         <stack.Screen name="mycart" component={mycart} />
         <stack.Screen name="productinfo" component={productinfo} />
         <stack.Screen name="profile" component={profile} />
-
+        <stack.Screen name="cards" component={cards} />
       </stack.Navigator>
     </NavigationContainer>
   );

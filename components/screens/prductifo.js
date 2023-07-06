@@ -16,7 +16,7 @@ const productinfo = () => {
     <SafeAreaView>
       <View>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Text style={styles.heder}>></Text>
+          <Text style={styles.heder}></Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

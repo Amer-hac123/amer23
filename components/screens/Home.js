@@ -1,6 +1,6 @@
 //import liraries
-import { useNavigation } from '@react-navigation/native';
-import React, {useEffect,useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -11,57 +11,46 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
-import {COLOURS} from '../database/Database';
+import {COLORS, COLOURS} from '../database/Database';
 import {Item} from '../database/Database';
+import CatgoryList from './catgory list ';
+// const categorylist = ['faucet', 'bathroom closet'];
 
-
-const tab = () => {};
-// create a component
-const scroll = Item.map(item => {
-  return (
-    <TouchableOpacity style={{}}>
-      <View>
-        <Image
-          style={{width: 200, height: 180, borderRadius: 13, left:20, marginBottom: 90}}
-          source={item.productImage}
-        />
-        <Text source={item.productname} style={{fontSize: 102}}></Text>
-      </View>
-    </TouchableOpacity>
-  );
-});
+//create a component
 
 const Home = () => {
-  const navigation=useNavigation();
+  const categorylist = () => {};
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.page}>
-      <StatusBar backgroundColor={COLOURS.gray} barStyle="dark-content" />
-     <TouchableOpacity style={styles.seall} onPress={()=>navigation.navigate('productinfo')}>
+      <StatusBar backgroundColor={COLORS.grey} barStyle="dark-content" />
+      {/* <TouchableOpacity
+        style={styles.seall}
+        onPress={() => navigation.navigate('productinfo')}>
         <Text style={styles.seall}> see all</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <View style={styles.v1}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('profile')}>
           <Image
             source={require('../database/images/products/user.png')}
             style={styles.img}
           />
         </TouchableOpacity>
-        <TouchableOpacity  onPress={()=>navigation.navigate('mycart')}>
+        <TouchableOpacity onPress={() => navigation.navigate('mycart')}>
           <Image
             source={require('../database/images/products/shopping-cart.png')}
             style={styles.img1}
           />
         </TouchableOpacity>
-        
       </View>
 
+      {/* <Text>{scroll}</Text> */}
       <Text style={styles.text}>welcome </Text>
       <View style={styles.dd}>
         <Text style={styles.untext}>to baba store </Text>
       </View>
-      
-      <ScrollView horizontal showsVerticalScrollIndicator={false}>{scroll}</ScrollView>
+      <CatgoryList />
     </SafeAreaView>
   );
 };
@@ -82,7 +71,6 @@ const styles = StyleSheet.create({
   img1: {
     height: 48,
     width: 48,
-    
   },
   v1: {
     width: '100%',
@@ -104,7 +92,7 @@ const styles = StyleSheet.create({
     color: 'blue',
     fontSize: 25,
     top: 135,
-    left:'40%'
+    left: '40%',
   },
   dd: {
     color: 'white',
